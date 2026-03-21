@@ -374,15 +374,10 @@ a { color: inherit; text-decoration: none; }
 .svc-card-img {
   position: absolute;
   inset: 0;
-  background: #1c1c1c;
-}
-.svc-card-img img {
-  width: 100%;
-  height: 130%;
-  object-fit: cover;
-  display: block;
-  margin-top: -15%;
-  will-change: transform;
+  background-color: #1c1c1c;
+  background-size: auto 160%;
+  background-position: center 50%;
+  background-repeat: no-repeat;
 }
 
 /* Gradient overlay — always present, darkens more on hover */
@@ -536,7 +531,7 @@ a { color: inherit; text-decoration: none; }
 /* Each back panel shows its own individual photo */
 .flip-card[data-panel="1"] .flip-back::before { background-image: url('photos/split_view/panel_photos/panel_1.jpg'); background-size: cover; background-position: center; }
 .flip-card[data-panel="2"] .flip-back::before { background-image: url('photos/split_view/panel_photos/panel_2.png'); background-size: cover; background-position: center; }
-.flip-card[data-panel="3"] .flip-back::before { background-image: url('photos/split_view/panel_photos/panel_3.jpg'); background-size: cover; background-position: center; }
+.flip-card[data-panel="3"] .flip-back::before { background-image: url('photos/split_view/panel_photos/panel_3.png'); background-size: cover; background-position: center; }
 .flip-card[data-panel="4"] .flip-back::before { background-image: url('photos/split_view/panel_photos/panel_4.jpg'); background-size: cover; background-position: center; }
 
 /* Placeholder shown until real image is added */

@@ -534,6 +534,11 @@ a { color: inherit; text-decoration: none; }
 .flip-card[data-panel="3"] .flip-back::before { background-image: url('photos/split_view/panel_photos/panel_3.png'); background-size: cover; background-position: center; }
 .flip-card[data-panel="4"] .flip-back::before { background-image: url('photos/split_view/panel_photos/panel_4.jpg'); background-size: cover; background-position: center; }
 
+/* Mobile-only photo inside flip-back — hidden on desktop */
+.flip-mobile-img {
+  display: none;
+}
+
 /* Placeholder shown until real image is added */
 .flip-placeholder {
   position: absolute;
@@ -899,7 +904,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 900px) {
   .nav-links { display: none; }
   .nav-right  { display: none; }
-  .nav-burger { display: flex; }
+  .nav-burger { display: flex; margin-left: auto; }
 
   .hero-content {
     grid-template-columns: 1fr;
@@ -936,6 +941,16 @@ a { color: inherit; text-decoration: none; }
   /* hide photo backgrounds */
   .flip-front::before,
   .flip-back::before { display: none; }
+
+  /* show inline photo below the text */
+  .flip-mobile-img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    order: 1;
+  }
+  .flip-label--back { order: 0; }
   /* hide the front face entirely */
   .flip-front { display: none; }
   /* make back face always visible, no transform */

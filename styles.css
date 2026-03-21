@@ -472,15 +472,19 @@ a { color: inherit; text-decoration: none; }
 ───────────────────────────────────────────── */
 .splitview {
   background: var(--clr-bg);
-  padding: 0;            /* strip bleeds edge-to-edge */
+  padding: 0 3rem;
 }
 
-/* 4 panels flush side-by-side, full viewport width */
+/* 4 panels constrained to same width as services grid */
 .splitview-strip {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   height: 560px;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 /* ── Swap Panel ── */

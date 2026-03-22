@@ -397,6 +397,8 @@
   <script src="main.js"></script>
   <script>
     (function () {
+      if (window.matchMedia('(max-width: 768px)').matches) return;
+
       const cards = document.querySelectorAll('.svc-card');
       if (!cards.length) return;
 

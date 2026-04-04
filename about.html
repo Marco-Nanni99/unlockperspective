@@ -234,31 +234,89 @@
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
+      .about-hero {
+        padding: calc(var(--nav-h) + 2rem) 1.5rem 3rem;
+        min-height: 40vh;
+      }
+
+      .about-hero-title {
+        font-size: clamp(2rem, 8vw, 2.8rem);
+        margin-bottom: 1rem;
+      }
+
+      .about-hero-sub {
+        font-size: 0.85rem;
+        line-height: 1.65;
+      }
+
       .about-bio {
         grid-template-columns: 1fr;
-        gap: 3rem;
-        padding: 5rem 1.5rem;
+        gap: 2rem;
+        padding: 3.5rem 1.5rem;
       }
 
       .about-photo-wrap {
         aspect-ratio: 4 / 3;
       }
 
-      .about-values-grid {
-        grid-template-columns: 1fr;
-        gap: 1.2rem;
+      .about-name {
+        font-size: 1.8rem;
       }
 
-      .about-hero {
-        padding: calc(var(--nav-h) + 3rem) 1.5rem 3.5rem;
+      .about-body {
+        font-size: 0.86rem;
       }
 
-      .about-cta {
-        padding: 5rem 1.5rem;
+      .about-text a.final-cta-btn {
+        align-self: stretch;
+        text-align: center;
       }
 
       .about-values {
-        padding: 5rem 1.5rem;
+        padding: 3.5rem 1.5rem;
+      }
+
+      .about-values-header {
+        margin-bottom: 2rem;
+      }
+
+      .about-values-header .section-title {
+        font-size: 1.6rem !important;
+      }
+
+      .about-values-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .value-card {
+        padding: 1.4rem 1.2rem;
+      }
+
+      .about-cta {
+        padding: 3.5rem 1.5rem;
+        gap: 1.4rem;
+      }
+
+      .about-cta-title {
+        font-size: 1.6rem;
+      }
+
+      .about-cta-sub {
+        font-size: 0.82rem;
+      }
+
+      .final-cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+        width: 100%;
+        max-width: 320px;
+        gap: 0.8rem;
+      }
+
+      .final-cta-btn,
+      .final-cta-secondary {
+        text-align: center;
       }
     }
   </style>
@@ -271,8 +329,7 @@
     <nav class="nav-links">
       <a href="index.html">Home</a>
       <a href="index.html#packages">Packages</a>
-      <a href="index.html#services">Services</a>
-      <a href="index.html#work">Portfolio</a>
+      <a href="portfolio.html">Portfolio</a>
       <a href="about.html" class="active">About</a>
       <a href="index.html#contact">Contact</a>
     </nav>
@@ -292,8 +349,7 @@
     <div class="nav-drawer">
       <a href="index.html"          class="drawer-link">Home</a>
       <a href="index.html#packages" class="drawer-link">Packages</a>
-      <a href="index.html#services" class="drawer-link">Services</a>
-      <a href="index.html#work"     class="drawer-link">Portfolio</a>
+      <a href="portfolio.html"      class="drawer-link">Portfolio</a>
       <a href="about.html"          class="drawer-link">About</a>
       <div class="drawer-footer">
         <a href="https://www.instagram.com/unlockperspective/reels/?__d=11%2F" target="_blank" class="drawer-insta" aria-label="Instagram">

@@ -1,5 +1,16 @@
 /* main.js — placeholder for future JS (scroll animations, slider, etc.) */
 
+// ── Page fade out on navigation ──
+document.querySelectorAll('a[href]').forEach(link => {
+  const href = link.getAttribute('href');
+  if (!href || href.startsWith('#') || href.startsWith('tel:') || href.startsWith('mailto:') || link.target === '_blank') return;
+  link.addEventListener('click', e => {
+    e.preventDefault();
+    document.body.classList.add('is-leaving');
+    setTimeout(() => { window.location.href = href; }, 180);
+  });
+});
+
 // Smooth active-link highlighting on scroll
 const sections = document.querySelectorAll("section[id]");
 const navLinks = document.querySelectorAll(".nav-links a");
@@ -34,18 +45,20 @@ const burger = document.querySelector('.nav-burger');
 const drawer = document.querySelector('.nav-drawer');
 const drawerLinks = document.querySelectorAll('.drawer-link');
 
-burger.addEventListener('click', () => {
-  const isOpen = drawer.classList.toggle('is-open');
-  burger.classList.toggle('is-open', isOpen);
-  burger.setAttribute('aria-expanded', isOpen);
-  document.body.style.overflow = isOpen ? 'hidden' : '';
-});
-
-drawerLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    drawer.classList.remove('is-open');
-    burger.classList.remove('is-open');
-    burger.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
+if (burger && drawer) {
+  burger.addEventListener('click', () => {
+    const isOpen = drawer.classList.toggle('is-open');
+    burger.classList.toggle('is-open', isOpen);
+    burger.setAttribute('aria-expanded', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
   });
-});
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      drawer.classList.remove('is-open');
+      burger.classList.remove('is-open');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    });
+  });
+}
